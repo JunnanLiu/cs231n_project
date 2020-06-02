@@ -9,14 +9,16 @@ Created on Tue Jun  2 00:34:25 2020
 
 
 #Imports
+import shutil 
 import os
+import matplotlib.pyplot as plt
+import random
 import subprocess
-
 
 
 ##INPUT HERE##
 #We first want to get inputs for grid bounds and number for each type of grid
-numRuns = 1
+numRuns = 10
 numEpochs = 10
 numEpochsDecay = 10
 
