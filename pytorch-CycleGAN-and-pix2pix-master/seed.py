@@ -18,9 +18,9 @@ import subprocess
 
 ##INPUT HERE##
 #We first want to get inputs for grid bounds and number for each type of grid
-numRuns = 10
-numEpochs = 10
-numEpochsDecay = 10
+numRuns = 20
+numEpochs = 15
+numEpochsDecay = 15
 
 #For learning rate
 lr_list = []
