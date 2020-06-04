@@ -137,15 +137,15 @@ for i in range(firstRun,numRuns):
   #Now set the main train command
   print('Starting training for ' + str(epoch_list[i]) + ' epochs')
   #To train on CPUs:
-#  command = ['python', 'train_ershov.py', '--dataroot', './path:to:data/', '--name', runName, \
+#  command = ['python', 'train.py', '--dataroot', './path:to:data/', '--name', runName, \
 #             '--model', 'pix2pix', '--batch_size=8', '--direction', 'AtoB', '--n_epochs='+str(epoch_list[i]), \
 #             '--n_epochs_decay='+str(epochDecay_list[i]), '--gan_mode='+str(gan_list[i]), '--lr='+str(lr_list[i]), \
 #             '--beta1='+str(beta_list[i]), '--lr_policy='+str(policy_list[i]), '--gpu_ids', '-1']
 
    #To train on GPUs:
-#   python train_ershov.py --dataroot path:to:data --name run_test --model pix2pix --batch_size=8 --direction AtoB
+#   python train.py --dataroot path:to:data --name run_test --model pix2pix --batch_size=8 --direction AtoB
              
-  command = ['python', 'train_ershov.py', '--dataroot', 'path:to:data/', '--name', runName, \
+  command = ['python', 'train.py', '--dataroot', 'path:to:data/', '--name', runName, \
               '--model', 'pix2pix', '--batch_size=8', '--direction', 'AtoB', '--n_epochs='+str(epoch_list[i]), \
               '--n_epochs_decay='+str(epochDecay_list[i]), '--gan_mode='+str(gan_list[i]), '--lr='+str(lr_list[i]), \
               '--beta1='+str(beta_list[i]), '--lr_policy='+str(policy_list[i]),\
@@ -160,9 +160,9 @@ for i in range(firstRun,numRuns):
   subprocess.run(command)
 
   #Also copy over the loss file, remove the created loss folder bc of my dumb script originally
-  shutil.copytree('ershov_lossFolder_0', runPath + '/loss')
-  command = ['rm', '-r', 'ershov_lossFolder_0']
-  subprocess.run(command)
+  # shutil.copytree('ershov_lossFolder_0', runPath + '/loss')
+  # command = ['rm', '-r', 'ershov_lossFolder_0']
+  # subprocess.run(command)
 #  !rm -r ershov_lossFolder_0
 
   #Finally, set the finished running to 1
