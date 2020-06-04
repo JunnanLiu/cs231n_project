@@ -18,7 +18,7 @@ import subprocess
 
 ##INPUT HERE##
 #We first want to get inputs for grid bounds and number for each type of grid
-numRuns = 20
+numRuns = 30
 numEpochs = 15
 numEpochsDecay = 15
 
